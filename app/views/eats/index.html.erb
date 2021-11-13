@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col">
       <h1>index of food</h1>
-      <%= link_to "Create Food", new_food_path, class:"btn btn-success" %>
+      <%= link_to "Create Food", new_eat_path, class:"btn btn-success" %>
     </div>
     <div class="col">
      <table>
@@ -14,19 +14,19 @@
          </tr>
        </thead>
        <tbody>
-         <% @foods.each do |food| %>
+         <% @eats.each do |eat| %>
          <tr>
            <td>
-             <%= food.name %>
+             <%= eat.name %>
            </td>
            <td>
-             <%= food.body %>
+             <%= eat.body %>
            </td>
            <td>
-             <%= link_to "Show", food_path(food.id) ,class:"btn btn-primary" %>
+             <%= link_to "Show", eat_path(eat.id) ,class:"btn btn-primary" %>
            </td>
            <td>
-             <%= link_to "Destroy", eat_path class:"btn btn-primary" %>
+             <%= link_to "Destroy", eat_path(eat.id),method: :delete, class:"btn btn-danger" %>
            </td>
          </tr>
          <% end %>

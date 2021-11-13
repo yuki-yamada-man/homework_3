@@ -4,14 +4,14 @@
       <h1>Create Food</h1>
     </div>
     <div class="col">
-      <%= form_with model: @food, local:true do |f| %>
+      <%= form_with model: @eat, local:true do |f| %>
       <h2>Name</h2>
       <%= f.text_field:name %>
       <h2>Introduction</h2>
-      <%= f.text_area:text %>
+      <%= f.text_area:body %>
       <%= f.submit"Create Food", class:"btn btn-success" %>
       <% end %>
     </div>
-    <%= link_to "Back",foods_path class:"btn btn-danger" %>
+    <%= link_to "Back",eats_path, class:"btn btn-danger" %>
   </div>
 </div>

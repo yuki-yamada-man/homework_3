@@ -1,43 +1,45 @@
 class EatsController < ApplicationController
-  
+
   def new
-    @food = Food.new
+    @eat = Eat.new
   end
-  
+
   def create
-    @food = Food.new
-    @food.save(food_params)
-    redirect_to eats_path(@food.id)
+    @eat = Eat.new(eat_params)
+    @eat.save
+    redirect_to eat_path(@eat.id)
   end
-  
+
   def index
-    @foods = Food.all
-  end 
-  
+    @eats = Eat.all
+  end
+
   def show
-    @food = Food.find(params[:id])
+    @eat = Eat.find(params[:id])
   end
-  
+
   def edit
-    @food = Food.find(params[:id])
+    @food = Eat.find(params[:id])
   end
-  
+
   def update
-    @food = Food.find(params[:id])
-    @food.update(food_params)
-    redirect_to eats_path
+    @eat = Eat.find(params[:id])
+    @eat.update(eat_params)
+    redirect_to eat_path(@eat.id)
   end
-  
+
   def destroy
-    @food = Food.find(params[:id])
-    @food.destroy
+    @eat = Eat.find(params[:id])
+    @eat.destroy
     redirect_to eats_path
   end
-  
+
   private
-  def food_params
-    params.require(:food).permit(:name,:body)
+
+
+  def eat_params
+    params.require(:eat).permit(:name, :body)
   end
-  
-  
+
+
 end
