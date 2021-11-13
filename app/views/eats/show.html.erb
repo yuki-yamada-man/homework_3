@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+     <h2>Detail of Food</h2>
+     <table>
+       <thead>
+         <tr>
+           <th>name</th>
+           <th>introduction</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td><%= @food.name %></td>
+           <td><%= @food.body %></td>
+         </tr>
+       </tbody>
+     </table>
+     <%= link_to "Edit", edit_eat_path, class:"btn btn-primary" %>
+     <%= link_to "Back", eats_path, class:"btn btn-danger" %>
+    </div>
+  </div>
+</div>

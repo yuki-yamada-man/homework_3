@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Create Food</h1>
+    </div>
+    <div class="col">
+      <%= form_with model: @food, local:true do |f| %>
+      <h2>Name</h2>
+      <%= f.text_field:name %>
+      <h2>Introduction</h2>
+      <%= f.text_area:text %>
+      <%= f.submit"Create Food", class:"btn btn-success" %>
+      <% end %>
+    </div>
+    <%= link_to "Back",foods_path class:"btn btn-danger" %>
+  </div>
+</div>
